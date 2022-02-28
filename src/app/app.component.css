@@ -1,0 +1,186 @@
+/*BODY*/
+
+/* NEW CARD */
+.new-card{
+    height: 300px;
+    width: 300px;
+    border: 1px solid white;
+    margin: 30px 0 0 30px;
+    padding: 10px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 3px 4px 5px 0px rgb(109, 108, 109);
+
+}
+.header-card{
+    width: 280px;
+    height: 230px;
+    border: 1px solid rgb(216, 216, 216);
+    margin-bottom: 10px;
+    padding: 30px;
+    border-radius: 20px;
+    
+}
+.add{
+    font-size: 120px;
+    cursor: pointer;
+}
+.btn-new{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.titulo{
+    cursor: pointer;
+    font-family: 'Goldman', cursive;
+    font-size: 30px;
+}
+.tuerca{
+    cursor: pointer;
+}
+
+/*SETTINGS NEW CARD*/
+.content-inputs{
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
+.img-profile{
+    font-size: 150px;
+    align-items: center;
+}
+.content-img{
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.content-profile{
+    border: 1px solid rgb(185, 184, 184);
+    border-radius: 15px;
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn-profile{
+    margin-top: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-control{
+    margin-top: 20px;
+}
+
+#row{
+    margin-top: 10px;
+    background: white !important;
+    border-radius: 15px;
+    box-shadow: 3px 4px 5px 0 rgb(114, 113, 113);
+}
+
+
+.col-3{
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
+.ejercicio{
+    height: 300px;
+    padding: 10px;
+}
+
+img{
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid rgb(219, 216, 216);
+}
+.btn-add{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* span{
+    display: block;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size:  25px;
+} */
+
+.header-settings{
+    padding: 10px;
+}
+
+/*SELECT-EJERCICIO BUTTON DROPDOWN*/
+
+#select-ejercicio{
+    width: 100%;
+}
+
+.logo{
+    font-family: 'Goldman', cursive;
+    font-size: 50px;
+    text-align: center;
+}
+
+.logo-image{
+    font-size: 150px;
+}
+#copy{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+/*SELEECT EJERCICIO*/
+
+#selectEjercicio{
+    width: 200px;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    background:#343a40;
+    color: white;
+    align-items: center;
+}
+
+
+.option{
+    color: white;
+}
+
+/*EXERCIE´S CARDS*/
+.border{
+    border: 1px solid black;
+}
+
+.center{
+    text-align: center;
+}
+/* .style-card-exercie{
+    height: 300px;
+} */
+.dimension-exercie{
+    width: 320px;
+    height: 350px;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/*COLOR BOTTOM EXERCIE*/
+
+/* .classTrue{
+
+}
+.classFake{
+
+} */
+
+/* .tamañoDivBtn{
+    width: 308px;
+    height: 70px;
+} */

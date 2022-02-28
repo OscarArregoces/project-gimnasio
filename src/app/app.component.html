@@ -1,0 +1,643 @@
+<!--NARVBAR-->
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container ">
+    <a class="navbar-brand titulo">Gimnasio</a>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><i class="fas fa-cog tuerca"></i></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- CARD-NEW-CARD -->
+
+
+<div class="row principal-new" *ngIf="show">
+  <div class="col-12 ">
+
+    <div class="new-card">
+      <div class="header-card">
+        <i class="fas fa-plus-circle add ml-5" (click)="new_card()"></i>
+      </div>
+      <button class="btn btn-dark btn-new" (click)="new_card()">Crear Nuevo</button>
+    </div>
+  </div>
+</div>
+
+<!--NEW CARD SETTING CARD-->
+
+<!--TITULO/DESCRIPCION Y FOTO-->
+<div class="container mt-5" *ngIf="show_setting">
+  <div class="row" id="row">
+
+    <div class="col-6 content-inputs">
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Titulo">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Depscripcion">
+        </div>
+
+        <button class="btn btn-success btn-lg mr-5 mt-3 ml-5">Guardar carta</button>
+        <button class="btn btn-dark btn-lg mt-3 ml-5">Volver</button>
+      </form>
+    </div>
+
+    <div class="col-6">
+      <div class="content-img">
+        <div class="content-profile p-3">
+          <i class="fas fa-user-circle img-profile"></i>
+        </div>
+        <button class="btn btn-dark btn-profile">Subir foto</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!--SELECT EJERCICIOS-->
+
+  <div class="row header-settings " id="row">
+
+    <div id="select-ejercicio">
+
+      <select id="selectEjercicio" [(ngModel)]="select">
+        <option *ngFor="let ejercicio of exercies" [value]="ejercicio.id">
+
+          {{ejercicio.exercie}}
+
+        </option>
+
+      </select>
+
+      <!-- Value es {{select}} -->
+    </div>
+
+    <!--
+      mt-5 mx-2 style-card-exercie centrar-cards-exercie
+    -->
+    <div  [ngSwitch]="select">
+      <!--OPTION 1-->
+      <!-- ABDOMEN -->
+      <div class="row " *ngSwitchCase="1">
+        <!--COL 1-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake1; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Abdomen/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          
+          <button class="btn btn-dark my-3 center btnAdbomen1" style="width: 50%; height: 15%;" [ngClass]="guardado ? 'classFake':'classTrue'" (click)="saveExercie();">
+
+           Agregar
+  
+          </button>
+          
+
+        </div>
+        
+        <!--COL 2-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake2; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie"  style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Abdomen/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center " style="width: 50%; height: 15%;" >Agregar</button>
+
+        </div>
+        <!--COL 3-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake3; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie"  style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Abdomen/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center " style="width: 50%; height: 15%;" >Agregar</button>
+
+        </div>
+        <!--COL 4-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake4; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Abdomen/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center " style="width: 50%; height: 15%;" >Agregar</button>
+
+        </div>
+        
+      </div>
+    
+        <!--OPTION 2-->
+        <!-- BICEPS -->
+
+      <div class="row" *ngSwitchCase="2">
+
+        <!--COL 1-->
+        <div class="dimension-exercie border center " *ngFor="let item of NumberFake1; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Biceps/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+        
+        <!--COL 2-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake2; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Biceps/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+       
+      </div>
+        <!--OPTION 3-->
+        <!-- ESPALDA -->
+
+      <div class="row" *ngSwitchCase="3">
+
+        <!--COL 1-->
+        <div class="dimension-exercie border center " *ngFor="let item of NumberFake1; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Espalda/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+        
+        <!--COL 2-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake2; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Espalda/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+        <!--COL 3-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake3; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Espalda/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+        <!--COL 4-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake4; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Espalda/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+        <!--COL 5-->
+        <div class="dimension-exercie border center" >
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Espalda/13.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+      </div>
+        <!--OPTION 4-->
+        <!-- HOMBROS -->
+
+      <div class="row" *ngSwitchCase="4">
+          <!--COL 1-->
+        <div class="dimension-exercie border center " *ngFor="let item of NumberFake1; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Hombros/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+        
+        <!--COL 2-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake2; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Hombros/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+        <!--COL 3-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake3; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Hombros/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+        <!--COL 4-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake4; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Hombros/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+        <!--COL 5-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake5; let indice = index" >
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Hombros/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+
+        <!--COL 6-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake6; let indice = index" >
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Hombros/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+      </div>
+        <!--OPTION 5-->
+        <!-- PECTORAL -->
+
+      <div class="row" *ngSwitchCase="5">
+
+         <!--COL 1-->
+         <div class="dimension-exercie border center " *ngFor="let item of NumberFake1; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Pectoral/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+        
+        <!--COL 2-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake2; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Pectoral/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+        <!--COL 3-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake3; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Pectoral/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+        <!--COL 4-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake4; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Pectoral/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+        
+      </div>
+        <!--OPTION 6-->
+        <!-- PIERNAS -->
+
+      <div class="row" *ngSwitchCase="6">
+          <!--COL 1-->
+        <div class="dimension-exercie border center " *ngFor="let item of NumberFake1; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Piernas/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+        <!--COL 2-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake2; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Piernas/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+        <!--COL 3-->
+        <div class="dimension-exercie border center" *ngFor="let item of NumberFake3; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Piernas/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+        <!--COL 4-->
+        <div class="dimension-exercie border center" >
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Piernas/10.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+      </div>
+        <!--OPTION 7-->
+        <!-- TRAPESIO -->
+
+      <div class="row" *ngSwitchCase="7">
+
+        <!--COL 1-->
+        <div class="dimension-exercie border center " *ngFor="let item of NumberFake1; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Trapesio/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+         <!--COL 2-->
+         <div class="dimension-exercie border center " >
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Trapesio/4.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+      </div>
+
+        <!--OPTION 8-->
+        <!-- TRICEPS -->
+
+      <div class="row" *ngSwitchCase="8">
+         <!--COL 1-->
+         <div class="dimension-exercie border center " *ngFor="let item of NumberFake1; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Triceps/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+    
+        </div>
+         <!--COL 2-->
+         <div class="dimension-exercie border center " *ngFor="let item of NumberFake2; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Triceps/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+         <!--COL 3-->
+         <div class="dimension-exercie border center " *ngFor="let item of NumberFake3; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Triceps/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+         <!--COL 4-->
+         <div class="dimension-exercie border center " *ngFor="let item of NumberFake7; let indice = index">
+
+          <div class="header-exercie" style="width: 100%; height: 15%;">
+            <h5>Ejercicio</h5>
+          </div>
+
+          <div class="img-exercie" style="width: 310px; height: 210px;" >
+
+            <img src="../assets/image_jercicios/Triceps/{{item}}.jpg" alt="Imagen" width="100%" height="100%">
+
+          </div>
+
+          <button class="btn btn-dark my-3 center" style="width: 50%; height: 15%;">Agregar</button>
+
+        </div>
+
+      </div>
+     
+      <div *ngSwitchDefault></div>
+    </div>
+
+  </div>
+
+</div>
+
